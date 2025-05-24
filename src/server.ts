@@ -7,7 +7,9 @@ import ytdl from 'youtube-dl-exec';
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-app.use(cors());
+app.use(cors({
+  origin:"*",
+}));
 
 app.get('/download', async (req, res) => {
   const videoUrl = req.query.url as string;
